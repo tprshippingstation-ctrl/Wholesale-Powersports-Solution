@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Wholesale Powersport Solutions — Sell your trade-ins fast</title>
+<meta name="description" content="Wholesale Powersport Solutions buys motorcycle trade-ins and unwanted inventory from Central Florida dealers, tow yards, and repair shops. Submit your bikes, get a quote, get paid.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;600;700&family=Work+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap header-inner">
+    <div class="brand">
+      <span class="brand-mark" aria-hidden="true">
+        <svg viewBox="0 0 48 32" width="34" height="23">
+          <circle cx="10" cy="24" r="6" fill="none" stroke="currentColor" stroke-width="2.5"/>
+          <circle cx="38" cy="24" r="6" fill="none" stroke="currentColor" stroke-width="2.5"/>
+          <path d="M10 24 L20 12 L30 12 L38 24 M20 12 L24 20 L38 24 M16 24 H30" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </span>
+      <span class="brand-name">Wholesale Powersport<br>Solutions</span>
+    </div>
+    <a class="btn btn-header" href="#intake">Submit your bikes</a>
+  </div>
+</header>
+
+<main>
+
+  <section class="hero">
+    <div class="wrap hero-inner">
+      <h1>We buy your unwanted inventory and trade-ins.</h1>
+      <p class="hero-sub">Skip the hassle. Send us what's sitting in your lot, get a wholesale quote by email, and we'll handle pickup within 24&ndash;48 hours and cash-in-hand payment ourselves.</p>
+      <div class="hero-actions">
+        <a class="btn btn-primary" href="#intake">Submit your bikes</a>
+        <a class="btn btn-ghost" href="#how-it-works">See how it works</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="how" id="how-it-works">
+    <div class="wrap">
+      <h2>How it works</h2>
+      <ol class="steps">
+        <li class="step">
+          <span class="step-num">1</span>
+          <div>
+            <h3>Tell us what you've got</h3>
+            <p>List every bike you want to move using the form below. There's no limit on how many you add at once.</p>
+          </div>
+        </li>
+        <li class="step">
+          <span class="step-num">2</span>
+          <div>
+            <h3>Get a wholesale quote by email</h3>
+            <p>We price each motorcycle based on what you tell us and reply straight to your inbox, usually the same day.</p>
+          </div>
+        </li>
+        <li class="step">
+          <span class="step-num">3</span>
+          <div>
+            <h3>We pick up and pay</h3>
+            <p>Accept the quote and we arrange transportation and payment within 24&ndash;48 hours. No consignment, no waiting on a check.</p>
+          </div>
+        </li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="why">
+    <div class="wrap why-grid">
+      <div class="why-item">
+        <h3>No listing, no haggling</h3>
+        <p>Give us the details and a few pictures, we'll handle the rest.</p>
+      </div>
+      <div class="why-item">
+        <h3>We come to you</h3>
+        <p>Transportation is on us, within 24&ndash;48 hours of an accepted quote. Your lot space frees up fast.</p>
+      </div>
+      <div class="why-item">
+        <h3>A standing relationship, not a one-off</h3>
+        <p>We're building long-term partnerships with local dealers, not chasing single deals. Send us trade-ins as they come in.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="intake" id="intake">
+    <div class="wrap">
+      <div class="intake-head">
+        <h2>Submit your motorcycles</h2>
+        <p>Add every bike you're looking to move. We'll follow up by email with a wholesale quote for each one.</p>
+      </div>
+
+      <p class="form-success-banner" id="submission-success" hidden>Thanks — your submission is in. We'll follow up by email with a quote.</p>
+
+      <form id="intake-form" class="intake-form" method="POST"
+            action="https://formsubmit.co/REPLACE_WITH_YOUR_EMAIL"
+            enctype="multipart/form-data" novalidate>
+
+        <input type="hidden" name="_subject" id="form-subject" value="New wholesale submission">
+        <input type="hidden" name="_template" value="table">
+        <input type="hidden" name="_next" id="form-next" value="">
+        <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off">
+
+        <fieldset class="panel">
+          <legend>Your business</legend>
+          <div class="field-grid">
+            <div class="field">
+              <label for="dealer_name">Business name</label>
+              <input type="text" id="dealer_name" name="Business name" required autocomplete="organization">
+            </div>
+            <div class="field">
+              <label for="contact_name">Contact name</label>
+              <input type="text" id="contact_name" name="Contact name" required autocomplete="name">
+            </div>
+            <div class="field">
+              <label for="contact_email">Email</label>
+              <input type="email" id="contact_email" name="email" required autocomplete="email">
+            </div>
+            <div class="field">
+              <label for="contact_phone">Phone</label>
+              <input type="tel" id="contact_phone" name="Phone" required autocomplete="tel">
+            </div>
+            <div class="field">
+              <label for="dealer_city">City</label>
+              <input type="text" id="dealer_city" name="City" required autocomplete="address-level2">
+            </div>
+          </div>
+        </fieldset>
+
+        <div id="bikes-container"></div>
+
+        <button type="button" id="add-bike" class="btn btn-ghost btn-add">+ Add another motorcycle</button>
+
+        <fieldset class="panel">
+          <legend>Anything else?</legend>
+          <div class="field field-full">
+            <label for="extra_notes">Notes for our team (optional)</label>
+            <textarea id="extra_notes" name="Additional notes" rows="3"></textarea>
+          </div>
+        </fieldset>
+
+        <div class="form-footer">
+          <button type="submit" class="btn btn-primary btn-submit" id="submit-btn">Send to our team</button>
+          <p class="form-status" id="form-status" role="status" aria-live="polite"></p>
+        </div>
+      </form>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap footer-inner">
+    <div>
+      <p class="footer-brand">Wholesale Powersport Solutions</p>
+      <p class="footer-tag">A sourcing partner for Central Florida dealers, tow yards, and repair shops.</p>
+    </div>
+    <div class="footer-contact">
+      <p><a href="mailto:info@wholesalepowersportsolutions.com">info@wholesalepowersportsolutions.com</a></p>
+      <p><a href="tel:+14075551234">(407) 555-1234</a></p>
+    </div>
+  </div>
+</footer>
+
+<template id="bike-template">
+  <fieldset class="panel bike-panel">
+    <legend>Motorcycle <span class="bike-index">1</span></legend>
+    <button type="button" class="remove-bike" aria-label="Remove this motorcycle">Remove</button>
+    <div class="field-grid">
+      <div class="field field-small">
+        <label>Year</label>
+        <input type="text" class="bike-year" name="Year[]" inputmode="numeric" placeholder="2018" required>
+      </div>
+      <div class="field">
+        <label>Make</label>
+        <input type="text" class="bike-make" name="Make[]" placeholder="Harley-Davidson" required>
+      </div>
+      <div class="field">
+        <label>Model</label>
+        <input type="text" class="bike-model" name="Model[]" placeholder="Street Glide" required>
+      </div>
+      <div class="field field-small">
+        <label>Mileage</label>
+        <input type="text" class="bike-mileage" name="Mileage[]" inputmode="numeric" placeholder="24,500" required>
+      </div>
+      <div class="field">
+        <label>Condition</label>
+        <select class="bike-condition" name="Condition[]" required>
+          <option value="" disabled selected>Select one</option>
+          <option>Runs and rides</option>
+          <option>Runs, needs work</option>
+          <option>Non-running</option>
+          <option>Parts only / salvage</option>
+        </select>
+      </div>
+      <div class="field">
+        <label>VIN <span class="optional">(optional)</span></label>
+        <input type="text" class="bike-vin" name="VIN[]" placeholder="17-character VIN">
+      </div>
+      <div class="field field-full">
+        <label>Notes <span class="optional">(optional)</span></label>
+        <input type="text" class="bike-notes" name="Notes[]" placeholder="Damage, missing parts, title status, anything we should know">
+      </div>
+      <div class="field field-full">
+        <label>Photos <span class="optional">(optional, up to 4)</span></label>
+        <input type="file" class="bike-photos" name="attachment" accept="image/*" multiple>
+        <p class="field-hint photo-hint">A few clear shots of this bike help us quote faster.</p>
+      </div>
+    </div>
+  </fieldset>
+</template>
+
+<script src="js/main.js"></script>
+</body>
+</html>
