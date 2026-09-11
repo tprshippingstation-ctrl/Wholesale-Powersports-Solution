@@ -219,6 +219,7 @@ img{ max-width: 100%; display: block; }
 
 @media (max-width: 860px){
   .site-nav, .header-inner > .btn-header{ display: none; }
+  .brand-word{ display: none; }
   .nav-toggle{ display: block; }
   .mobile-nav.open{ display: flex; }
 }
@@ -284,16 +285,14 @@ img{ max-width: 100%; display: block; }
 }
 
 @media (max-width: 880px){
-  .hero{ aspect-ratio: auto; min-height: 0; }
+  .hero{ display: block; aspect-ratio: auto; min-height: 0; }
+  .hero-media{ position: relative; height: 200px; }
   .hero-media img{ object-position: 65% top; }
-  .hero-scrim{
-    background: linear-gradient(180deg,
-      var(--bg) 0%,
-      rgba(245,243,239,0.95) 55%,
-      rgba(245,243,239,0.85) 100%);
-  }
-  .hero-media{ position: relative; height: 220px; }
-  .hero-content{ padding: 32px 0 48px; max-width: none; }
+  .hero-scrim{ display: none; }
+  .hero-content{ padding: 28px 0 40px; max-width: none; }
+  .hero h1{ font-size: 2rem; line-height: 1.12; }
+  .hero-sub{ font-size: 1rem; max-width: none; }
+  .hero-actions .btn-lg{ padding: 14px 24px; font-size: 0.95rem; width: 100%; justify-content: center; }
 }
 
 /* ---------------------------------------------
@@ -381,7 +380,13 @@ img{ max-width: 100%; display: block; }
 }
 
 @media (max-width: 760px){
-  .how-grid{ grid-template-columns: 1fr; gap: 40px; }
+  .how-grid{ grid-template-columns: 1fr; gap: 26px; }
+  .how-icon{ width: 56px; height: 56px; margin-bottom: 12px; }
+  .how-icon svg{ width: 22px; height: 22px; }
+  .how-badge{ width: 20px; height: 20px; font-size: 0.7rem; }
+  .how-step h3{ font-size: 1.02rem; margin-bottom: 4px; }
+  .how-step p{ font-size: 0.9rem; max-width: none; }
+  .how-tagline{ margin-top: 30px; }
 }
 
 /* ---------------------------------------------
