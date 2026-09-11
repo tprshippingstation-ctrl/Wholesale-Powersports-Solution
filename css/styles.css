@@ -219,7 +219,6 @@ img{ max-width: 100%; display: block; }
 
 @media (max-width: 860px){
   .site-nav, .header-inner > .btn-header{ display: none; }
-  .brand-word{ display: none; }
   .nav-toggle{ display: block; }
   .mobile-nav.open{ display: flex; }
 }
@@ -285,14 +284,115 @@ img{ max-width: 100%; display: block; }
 }
 
 @media (max-width: 880px){
-  .hero{ display: block; aspect-ratio: auto; min-height: 0; }
-  .hero-media{ position: relative; height: 200px; }
-  .hero-media img{ object-position: 65% top; }
-  .hero-scrim{ display: none; }
-  .hero-content{ padding: 28px 0 40px; max-width: none; }
-  .hero h1{ font-size: 2rem; line-height: 1.12; }
-  .hero-sub{ font-size: 1rem; max-width: none; }
-  .hero-actions .btn-lg{ padding: 14px 24px; font-size: 0.95rem; width: 100%; justify-content: center; }
+  #desktop-home{ display: none; }
+}
+
+/* ---------------------------------------------
+   Mobile-only home page — entirely separate
+   markup from desktop, hidden above 880px.
+--------------------------------------------- */
+#mobile-home{ display: none; }
+
+@media (max-width: 880px){
+  #mobile-home{ display: block; }
+}
+
+/* Hero: photo card with headline + button overlaid directly on it */
+.mhero-card{
+  position: relative;
+  margin: 0;
+  overflow: hidden;
+  aspect-ratio: 5 / 4;
+}
+.mhero-card img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 74% center;
+  display: block;
+}
+.mhero-card-scrim{
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(16,17,20,0) 40%, rgba(16,17,20,0.82) 100%);
+}
+.mhero-card-content{
+  position: absolute;
+  left: 0; right: 0; bottom: 0;
+  padding: 24px 20px 26px;
+  text-align: center;
+}
+.mhero-card-content h1{
+  color: #fff;
+  font-size: 1.4rem;
+  line-height: 1.2;
+  margin-bottom: 14px;
+}
+.mhero-card-cta{
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 10px 18px;
+  border-radius: var(--radius-pill);
+  background: var(--accent);
+  color: #fff;
+  font-weight: 700;
+  font-size: 0.85rem;
+  text-decoration: none;
+}
+.mhero-card-cta:active{ background: var(--accent-dark); }
+
+/* Secondary button: white background, orange text/border — for
+   the "How it works" link, distinct from the primary accent CTA */
+.btn-secondary-accent{
+  background: #fff;
+  color: var(--accent);
+  border: 1.5px solid var(--accent);
+}
+.btn-secondary-accent:active{ background: var(--accent-tint); }
+
+/* Below the photo: short blurb + a real link to the How It Works page */
+.mhero-below{
+  padding: 22px 20px 8px;
+}
+.mhero-below p{
+  color: var(--muted);
+  font-size: 0.98rem;
+  margin-bottom: 18px;
+}
+.mhero-below .btn{ width: 100%; justify-content: center; }
+
+/* Built for dealers + collapsible value props */
+.mdealers{ padding: 32px 20px 48px; }
+.mdealers h2{ font-size: 1.5rem; margin-bottom: 12px; }
+.mdealers > p{ color: var(--muted); font-size: 0.98rem; margin-bottom: 28px; }
+
+.mvalue-accordion{ border-top: 1px solid var(--line); }
+.mvalue-item{ border-bottom: 1px solid var(--line); }
+.mvalue-item summary{
+  list-style: none;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 16px 0;
+  font-weight: 700;
+  font-size: 1rem;
+  cursor: pointer;
+}
+.mvalue-item summary::-webkit-details-marker{ display: none; }
+.mv-chevron{
+  width: 18px;
+  height: 18px;
+  flex-shrink: 0;
+  color: var(--muted);
+  transition: transform .2s ease;
+}
+.mvalue-item[open] .mv-chevron{ transform: rotate(180deg); }
+.mvalue-item p{
+  padding: 0 0 18px;
+  color: var(--muted);
+  font-size: 0.92rem;
 }
 
 /* ---------------------------------------------
