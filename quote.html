@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Submit Inventory | Wholesale Powersport Solutions</title>
+<meta name="description" content="Submit your motorcycle inventory to Wholesale Powersport Solutions and get a wholesale offer.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a href="index.html" class="brand">
+      <span class="brand-mark" aria-hidden="true">WPS</span>
+      <span class="brand-word">Wholesale Powersport<br>Solutions</span>
+    </a>
+    <nav class="site-nav">
+      <a href="how-it-works.html">How It Works</a>
+      <a href="who-we-are.html">Who We Are</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+    <a class="btn btn-header" href="quote.html">Submit Inventory <span aria-hidden="true">&rarr;</span></a>
+    <button class="nav-toggle" id="nav-toggle" aria-label="Toggle menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+  <nav class="mobile-nav" id="mobile-nav" hidden>
+    <a href="how-it-works.html">How It Works</a>
+    <a href="who-we-are.html">Who We Are</a>
+    <a href="contact.html">Contact</a>
+    <a class="btn btn-accent" href="quote.html">Submit Inventory &rarr;</a>
+  </nav>
+</header>
+
+<main class="quote-page">
+  <div class="wrap quote-wrap">
+
+    <div class="quote-progress">
+      <div class="progress-step active" data-step="1"><span class="progress-num">1</span> Your info</div>
+      <div class="progress-line"></div>
+      <div class="progress-step" data-step="2"><span class="progress-num">2</span> Your motorcycle(s)</div>
+    </div>
+
+    <p class="form-success-banner" id="submission-success" hidden>Thanks! Your submission is in. We'll follow up shortly with an offer.</p>
+
+    <form id="quote-form" class="quote-form" method="POST"
+          action="https://formsubmit.co/tprshippingstation@gmail.com"
+          enctype="multipart/form-data" novalidate>
+
+      <input type="hidden" name="_subject" id="form-subject" value="New quote request">
+      <input type="hidden" name="_template" value="table">
+      <input type="hidden" name="_captcha" value="false">
+      <input type="hidden" name="_next" id="form-next" value="">
+      <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off">
+
+      <section class="quote-step" data-step="1">
+        <h2>Your info</h2>
+        <p class="step-sub">Just enough for us to reach you back. No account needed: we'll remember this for next time.</p>
+
+        <div class="field-grid">
+          <div class="field">
+            <label for="q_name">Name of contact</label>
+            <input type="text" id="q_name" name="Name" required autocomplete="name">
+          </div>
+          <div class="field">
+            <label for="q_business">Business name <span class="field-note">(Optional)</span></label>
+            <input type="text" id="q_business" name="Business name" autocomplete="organization">
+          </div>
+          <div class="field">
+            <label for="q_email">Email <span class="field-note">(Optional)</span></label>
+            <input type="email" id="q_email" name="email" autocomplete="email">
+          </div>
+          <div class="field">
+            <label for="q_phone">Phone</label>
+            <input type="tel" id="q_phone" name="Phone" required autocomplete="tel">
+          </div>
+        </div>
+
+        <div class="form-nav">
+          <span></span>
+          <button type="button" class="btn btn-accent" id="to-step-2">Next: Your motorcycle(s) <span aria-hidden="true">&rarr;</span></button>
+        </div>
+      </section>
+
+      <section class="quote-step" data-step="2" hidden>
+        <h2>Your motorcycle(s)</h2>
+        <p class="step-sub">Add every unit you're looking to move. There's no limit on how many.</p>
+
+        <div id="bikes-container"></div>
+
+        <button type="button" id="add-bike" class="btn btn-ghost btn-add">+ Add another motorcycle</button>
+
+        <fieldset class="panel">
+          <legend>Anything else?</legend>
+          <div class="field field-full">
+            <label for="extra_notes">Notes for our team (optional)</label>
+            <textarea id="extra_notes" name="Additional notes" rows="3"></textarea>
+          </div>
+        </fieldset>
+
+        <div class="form-nav">
+          <button type="button" class="btn btn-ghost" id="back-to-step-1">&larr; Back</button>
+          <button type="submit" class="btn btn-accent btn-submit">Submit for a quote</button>
+        </div>
+        <p class="form-status" id="form-status" role="status" aria-live="polite"></p>
+      </section>
+    </form>
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap footer-inner">
+    <div>
+      <p class="footer-brand">Wholesale Powersport Solutions</p>
+      <p class="footer-tag">A sourcing partner for Central Florida powersports dealers.</p>
+    </div>
+    <nav class="footer-links">
+      <a href="how-it-works.html">How It Works</a>
+      <a href="who-we-are.html">Who We Are</a>
+      <a href="contact.html">Contact</a>
+      <a href="quote.html">Submit Inventory</a>
+    </nav>
+    <div class="footer-contact">
+      <p><a href="mailto:joshua@wholesalepowersportsolutions.com">joshua@wholesalepowersportsolutions.com</a></p>
+      <p><a href="mailto:jameson@wholesalepowersportsolutions.com">jameson@wholesalepowersportsolutions.com</a></p>
+    </div>
+  </div>
+</footer>
+
+<template id="bike-template">
+  <fieldset class="panel bike-panel">
+    <legend>Motorcycle <span class="bike-index">1</span></legend>
+    <button type="button" class="remove-bike" aria-label="Remove this motorcycle">Remove</button>
+
+    <div class="vin-row">
+      <div class="field">
+        <label>VIN <span class="optional">(optional, but speeds things up)</span></label>
+        <input type="text" class="bike-vin" name="VIN[]" placeholder="17-character VIN" maxlength="17">
+      </div>
+      <button type="button" class="btn btn-accent btn-decode decode-vin">Decode VIN</button>
+    </div>
+    <p class="field-hint vin-hint"></p>
+
+    <div class="field-grid">
+      <div class="field field-small">
+        <label>Year</label>
+        <input type="text" class="bike-year" name="Year[]" inputmode="numeric" placeholder="2018" required>
+      </div>
+      <div class="field">
+        <label>Make</label>
+        <input type="text" class="bike-make" name="Make[]" placeholder="Harley-Davidson" required>
+      </div>
+      <div class="field">
+        <label>Model</label>
+        <input type="text" class="bike-model" name="Model[]" placeholder="Street Glide" required>
+      </div>
+      <div class="field field-small">
+        <label>Mileage</label>
+        <input type="text" class="bike-mileage" name="Mileage[]" inputmode="numeric" placeholder="24,500" required>
+      </div>
+      <div class="field">
+        <label>Title status</label>
+        <select class="bike-title" name="Title status[]" required>
+          <option value="" disabled selected>Select one</option>
+          <option>Clean in hand</option>
+          <option>Clean with lien</option>
+          <option>Clean in transit</option>
+          <option>Salvage</option>
+          <option>COD</option>
+        </select>
+      </div>
+      <div class="field">
+        <label>Condition</label>
+        <select class="bike-condition" name="Condition[]" required>
+          <option value="" disabled selected>Select one</option>
+          <option>Front line ready</option>
+          <option>Runs but with issues</option>
+          <option>Non-running</option>
+          <option>Parts/salvage only</option>
+        </select>
+      </div>
+      <div class="field field-small">
+        <label>Asking price</label>
+        <input type="number" class="bike-price" name="Asking price[]" inputmode="numeric" placeholder="$" min="0" required>
+      </div>
+      <div class="field field-full">
+        <label>Notes <span class="optional">(optional)</span></label>
+        <input type="text" class="bike-notes" name="Notes[]" placeholder="Damage, missing parts, anything we should know">
+      </div>
+      <div class="field field-full">
+        <label>Photos <span class="field-note">(up to 4 images)</span></label>
+        <input type="file" class="bike-photos" accept="image/*" multiple required>
+        <p class="field-hint photo-hint">A few clear shots of this bike help us quote faster.</p>
+      </div>
+    </div>
+  </fieldset>
+</template>
+
+<script src="js/main.js"></script>
+<script src="js/quote.js"></script>
+</body>
+</html>
